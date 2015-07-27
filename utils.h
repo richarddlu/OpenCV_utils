@@ -25,4 +25,14 @@ using namespace cv;
  */
 void rectResize(const Rect& src, Rect& dst, double ratio, const Size& bound);
 
+/**
+ * Resize a polygon while keeping the center unchanged
+ *
+ * @param const vector<Point>& src
+ * @param vector<Point>& dst
+ * @param double ratio equal to dst.area() / src.area(). If larger than 1, the polygon is expanded, if less than 1, it is shrinked
+ * @param const Size& bound boundary of the polygon. The vertices outside of bound is shrinked back to the bound
+ */
+void polyResize(const vector<Point>& src, vector<Point>& dst, double ratio, const Size& bound);
+
 #endif
